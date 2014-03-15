@@ -1,6 +1,9 @@
 package yenikayit;
 
 import java.awt.EventQueue;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,6 +15,10 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 public class OgunEkle extends JFrame {
+
+	/**
+	 * 
+	 */
 
 	private final JPanel contentPane;
 	private final JTextField textBesinEkle;
@@ -43,42 +50,69 @@ public class OgunEkle extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 549, 383);
 		contentPane = new JPanel();
+
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
-
-		textBesinEkle = new JTextField();
-		textBesinEkle.setBounds(68, 31, 178, 22);
-		contentPane.add(textBesinEkle);
-		textBesinEkle.setColumns(10);
-
-		JButton btnBesinEkle = new JButton("Ekle");
-		btnBesinEkle.setBounds(306, 30, 97, 25);
-		contentPane.add(btnBesinEkle);
+		GridBagLayout gbl_contentPane = new GridBagLayout();
+		gbl_contentPane.columnWidths = new int[] { 73, 173, 65, 55, 40, 71, 0 };
+		gbl_contentPane.rowHeights = new int[] { 35, 25, 59, 115, 25, 0 };
+		gbl_contentPane.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0,
+				0.0, Double.MIN_VALUE };
+		gbl_contentPane.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0,
+				Double.MIN_VALUE };
+		contentPane.setLayout(gbl_contentPane);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(68, 124, 404, 119);
-		contentPane.add(scrollPane);
 
 		tableBsnEkle = new JTable();
 		scrollPane.setViewportView(tableBsnEkle);
 		tableBsnEkle.setModel(new DefaultTableModel(new Object[][] {
-				{ null, null, null, null }, { null, null, null, null },
-				{ null, null, null, null }, { null, null, null, null },
-				{ null, null, null, null }, { null, null, null, null }, },
-				new String[] { "No", "Besin Ad\u0131", "Besin Miktar\u0131",
-						"Besin Kalori Miktar\u0131(cal)" }));
+				{ null, null, null }, { null, null, null },
+				{ null, null, null }, { null, null, null },
+				{ null, null, null }, { null, null, null }, }, new String[] {
+				"Besin Ad\u0131", "Besin Miktar\u0131",
+				"Kalori Miktar\u0131 (cal)" }));
+		tableBsnEkle.getColumnModel().getColumn(0).setPreferredWidth(104);
+		tableBsnEkle.getColumnModel().getColumn(1).setPreferredWidth(100);
+		tableBsnEkle.getColumnModel().getColumn(2).setPreferredWidth(132);
 
-		btnKaydet = new JButton("Kaydet");
-		btnKaydet.setBounds(375, 256, 97, 25);
-		contentPane.add(btnKaydet);
+		textBesinEkle = new JTextField();
+		textBesinEkle.setColumns(10);
+		GridBagConstraints gbc_textBesinEkle = new GridBagConstraints();
+		gbc_textBesinEkle.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textBesinEkle.insets = new Insets(0, 0, 5, 5);
+		gbc_textBesinEkle.gridx = 1;
+		gbc_textBesinEkle.gridy = 1;
+		contentPane.add(textBesinEkle, gbc_textBesinEkle);
+
+		JButton btnBesinEkle = new JButton("Ekle");
+		GridBagConstraints gbc_btnBesinEkle = new GridBagConstraints();
+		gbc_btnBesinEkle.anchor = GridBagConstraints.NORTHWEST;
+		gbc_btnBesinEkle.insets = new Insets(0, 0, 5, 5);
+		gbc_btnBesinEkle.gridx = 3;
+		gbc_btnBesinEkle.gridy = 1;
+		contentPane.add(btnBesinEkle, gbc_btnBesinEkle);
+		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
+		gbc_scrollPane.fill = GridBagConstraints.BOTH;
+		gbc_scrollPane.insets = new Insets(0, 0, 5, 0);
+		gbc_scrollPane.gridwidth = 5;
+		gbc_scrollPane.gridx = 1;
+		gbc_scrollPane.gridy = 3;
+		contentPane.add(scrollPane, gbc_scrollPane);
 
 		btnablonKullan = new JButton("\u015Eablon Kullan");
-		btnablonKullan.setBounds(68, 256, 125, 25);
-		contentPane.add(btnablonKullan);
-		tableBsnEkle.getColumnModel().getColumn(0).setPreferredWidth(42);
-		tableBsnEkle.getColumnModel().getColumn(1).setPreferredWidth(100);
-		tableBsnEkle.getColumnModel().getColumn(2).setPreferredWidth(98);
-		tableBsnEkle.getColumnModel().getColumn(3).setPreferredWidth(149);
+		GridBagConstraints gbc_btnablonKullan = new GridBagConstraints();
+		gbc_btnablonKullan.anchor = GridBagConstraints.NORTHWEST;
+		gbc_btnablonKullan.insets = new Insets(0, 0, 0, 5);
+		gbc_btnablonKullan.gridx = 1;
+		gbc_btnablonKullan.gridy = 4;
+		contentPane.add(btnablonKullan, gbc_btnablonKullan);
+
+		btnKaydet = new JButton("Kaydet");
+		GridBagConstraints gbc_btnKaydet = new GridBagConstraints();
+		gbc_btnKaydet.anchor = GridBagConstraints.NORTHEAST;
+		gbc_btnKaydet.gridx = 5;
+		gbc_btnKaydet.gridy = 4;
+		contentPane.add(btnKaydet, gbc_btnKaydet);
 	}
 }

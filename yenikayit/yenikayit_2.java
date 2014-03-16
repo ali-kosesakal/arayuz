@@ -3,14 +3,17 @@ package yenikayit;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
@@ -28,6 +31,12 @@ public class yenikayit_2 extends JFrame {
 	private final JTextField textField_6;
 	private final JTextField textField_7;
 	private final JTextField textField_8;
+	private final JTextField textField_9;
+	private final JTextField textField_10;
+	private final JTextField textField_11;
+	private final JTextField textField_12;
+	private final JTextField textField_13;
+	private final JTable table;
 
 	/**
 	 * Launch the application.
@@ -62,9 +71,9 @@ public class yenikayit_2 extends JFrame {
 		contentPane.add(kisiselbilgiTpane, BorderLayout.CENTER);
 
 		JPanel panel_1 = new JPanel();
-		kisiselbilgiTpane.addTab("New tab", null, panel_1, null);
+		kisiselbilgiTpane.addTab("Kiþisel Bilgiler", null, panel_1, null);
 		GridBagLayout gbl_panel_1 = new GridBagLayout();
-		gbl_panel_1.columnWidths = new int[] { 0, 0, 0, 100, 0 };
+		gbl_panel_1.columnWidths = new int[] { 0, 0, 0, 145, 0 };
 		gbl_panel_1.rowHeights = new int[] { 0, 0, 0, 0, 57, 0, 0, 0, 0, 0 };
 		gbl_panel_1.columnWeights = new double[] { 0.0, 0.0, 1.0, 0.0,
 				Double.MIN_VALUE };
@@ -73,6 +82,7 @@ public class yenikayit_2 extends JFrame {
 		panel_1.setLayout(gbl_panel_1);
 
 		JLabel lblAd = new JLabel("Ad :");
+		lblAd.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		GridBagConstraints gbc_lblAd = new GridBagConstraints();
 		gbc_lblAd.anchor = GridBagConstraints.WEST;
 		gbc_lblAd.insets = new Insets(0, 0, 5, 5);
@@ -226,10 +236,130 @@ public class yenikayit_2 extends JFrame {
 		textField_8.setColumns(10);
 
 		JPanel panel_2 = new JPanel();
-		kisiselbilgiTpane.addTab("New tab", null, panel_2, null);
+		kisiselbilgiTpane.addTab("Vücut Deðerleri", null, panel_2, null);
+		GridBagLayout gbl_panel_2 = new GridBagLayout();
+		gbl_panel_2.columnWidths = new int[] { 0, 0, 138, 0 };
+		gbl_panel_2.rowHeights = new int[] { 0, 0, 0, 0, 0, 0 };
+		gbl_panel_2.columnWeights = new double[] { 0.0, 1.0, 0.0,
+				Double.MIN_VALUE };
+		gbl_panel_2.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0,
+				Double.MIN_VALUE };
+		panel_2.setLayout(gbl_panel_2);
+
+		JLabel lblBoy = new JLabel("Boy :");
+		GridBagConstraints gbc_lblBoy = new GridBagConstraints();
+		gbc_lblBoy.anchor = GridBagConstraints.EAST;
+		gbc_lblBoy.insets = new Insets(0, 0, 5, 5);
+		gbc_lblBoy.gridx = 0;
+		gbc_lblBoy.gridy = 0;
+		panel_2.add(lblBoy, gbc_lblBoy);
+
+		textField_9 = new JTextField();
+		GridBagConstraints gbc_textField_9 = new GridBagConstraints();
+		gbc_textField_9.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_9.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_9.gridx = 1;
+		gbc_textField_9.gridy = 0;
+		panel_2.add(textField_9, gbc_textField_9);
+		textField_9.setColumns(10);
+
+		JLabel lblKilo = new JLabel("Kilo :");
+		GridBagConstraints gbc_lblKilo = new GridBagConstraints();
+		gbc_lblKilo.anchor = GridBagConstraints.EAST;
+		gbc_lblKilo.insets = new Insets(0, 0, 5, 5);
+		gbc_lblKilo.gridx = 0;
+		gbc_lblKilo.gridy = 1;
+		panel_2.add(lblKilo, gbc_lblKilo);
+
+		textField_10 = new JTextField();
+		GridBagConstraints gbc_textField_10 = new GridBagConstraints();
+		gbc_textField_10.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_10.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_10.gridx = 1;
+		gbc_textField_10.gridy = 1;
+		panel_2.add(textField_10, gbc_textField_10);
+		textField_10.setColumns(10);
+
+		JLabel lblYaOran = new JLabel("Ya\u011F Oran\u0131 :");
+		GridBagConstraints gbc_lblYaOran = new GridBagConstraints();
+		gbc_lblYaOran.anchor = GridBagConstraints.EAST;
+		gbc_lblYaOran.insets = new Insets(0, 0, 5, 5);
+		gbc_lblYaOran.gridx = 0;
+		gbc_lblYaOran.gridy = 2;
+		panel_2.add(lblYaOran, gbc_lblYaOran);
+
+		textField_11 = new JTextField();
+		GridBagConstraints gbc_textField_11 = new GridBagConstraints();
+		gbc_textField_11.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_11.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_11.gridx = 1;
+		gbc_textField_11.gridy = 2;
+		panel_2.add(textField_11, gbc_textField_11);
+		textField_11.setColumns(10);
+
+		JLabel lblKronikRahatszlk = new JLabel("Kronik Rahats\u0131zl\u0131k :");
+		GridBagConstraints gbc_lblKronikRahatszlk = new GridBagConstraints();
+		gbc_lblKronikRahatszlk.anchor = GridBagConstraints.EAST;
+		gbc_lblKronikRahatszlk.insets = new Insets(0, 0, 5, 5);
+		gbc_lblKronikRahatszlk.gridx = 0;
+		gbc_lblKronikRahatszlk.gridy = 3;
+		panel_2.add(lblKronikRahatszlk, gbc_lblKronikRahatszlk);
+
+		textField_12 = new JTextField();
+		GridBagConstraints gbc_textField_12 = new GridBagConstraints();
+		gbc_textField_12.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_12.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_12.gridx = 1;
+		gbc_textField_12.gridy = 3;
+		panel_2.add(textField_12, gbc_textField_12);
+		textField_12.setColumns(10);
+
+		JLabel lblKanDeerleri = new JLabel("Kan De\u011Ferleri :");
+		GridBagConstraints gbc_lblKanDeerleri = new GridBagConstraints();
+		gbc_lblKanDeerleri.insets = new Insets(0, 0, 0, 5);
+		gbc_lblKanDeerleri.anchor = GridBagConstraints.EAST;
+		gbc_lblKanDeerleri.gridx = 0;
+		gbc_lblKanDeerleri.gridy = 4;
+		panel_2.add(lblKanDeerleri, gbc_lblKanDeerleri);
+
+		textField_13 = new JTextField();
+		GridBagConstraints gbc_textField_13 = new GridBagConstraints();
+		gbc_textField_13.insets = new Insets(0, 0, 0, 5);
+		gbc_textField_13.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_13.gridx = 1;
+		gbc_textField_13.gridy = 4;
+		panel_2.add(textField_13, gbc_textField_13);
+		textField_13.setColumns(10);
 
 		JPanel panel_3 = new JPanel();
 		kisiselbilgiTpane.addTab("New tab", null, panel_3, null);
+		GridBagLayout gbl_panel_3 = new GridBagLayout();
+		gbl_panel_3.columnWidths = new int[] { 0, 0, 241, 57, 55, 62, 66, 0 };
+		gbl_panel_3.rowHeights = new int[] { 0, 0, 156, 61, 61, 60, 0 };
+		gbl_panel_3.columnWeights = new double[] { 0.0, 0.0, 0.0, 1.0, 0.0,
+				0.0, 0.0, Double.MIN_VALUE };
+		gbl_panel_3.rowWeights = new double[] { 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
+				Double.MIN_VALUE };
+		panel_3.setLayout(gbl_panel_3);
+
+		JList list = new JList();
+		GridBagConstraints gbc_list = new GridBagConstraints();
+		gbc_list.gridheight = 3;
+		gbc_list.insets = new Insets(0, 0, 5, 5);
+		gbc_list.fill = GridBagConstraints.BOTH;
+		gbc_list.gridx = 2;
+		gbc_list.gridy = 2;
+		panel_3.add(list, gbc_list);
+
+		table = new JTable();
+		GridBagConstraints gbc_table = new GridBagConstraints();
+		gbc_table.gridheight = 3;
+		gbc_table.gridwidth = 3;
+		gbc_table.insets = new Insets(0, 0, 5, 5);
+		gbc_table.fill = GridBagConstraints.BOTH;
+		gbc_table.gridx = 3;
+		gbc_table.gridy = 2;
+		panel_3.add(table, gbc_table);
 	}
 
 }
